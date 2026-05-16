@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ArticleController {
     public TextField titleTextField;
@@ -45,8 +46,23 @@ public class ArticleController {
         publicationDateCol.setCellValueFactory(new PropertyValueFactory<>("citationStatus"));
         noOfAuthorCol.setCellValueFactory(new PropertyValueFactory<>("noOfAuthor"));
     }
-
+    ArrayList<Article> articleList = new ArrayList<>();
     public void handleAddArticleButton(ActionEvent actionEvent) {
+        for(Article a:articleList){
+            if(a.getTitle().equals(titleTextField.getText())){
+                errorText.setText("Same Title!");
+                return;
+            }
+        }
+        String title = titleTextField.getText();
+        String author = authorTextField.getText();
+        String articleType = articleTypeComboBox.getValue();
+        LocalDate publicationDAte = publicationDatePicker.getValue();
+        String citationStatus = searchArticleTypeComboBox.getValue();
+        int noOfAuthor = Integer.parseInt(noOfAuthorTextField.getText());
+        Article a = new Article(title,author,articleType,publicationDAte,citationStatus,noOfAuthor);
+        articleList.add(a);
+        errorText.setText("Article Saved!!");
     }
 
     public void handleSearchrticleButton(ActionEvent actionEvent) {
