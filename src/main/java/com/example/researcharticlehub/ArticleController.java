@@ -48,6 +48,7 @@ public class ArticleController {
     }
     ArrayList<Article> articleList = new ArrayList<>();
     public void handleAddArticleButton(ActionEvent actionEvent) {
+
         for(Article a:articleList){
             if(a.getTitle().equals(titleTextField.getText())){
                 errorText.setText("Same Title!");
@@ -63,6 +64,8 @@ public class ArticleController {
         Article a = new Article(title,author,articleType,publicationDAte,citationStatus,noOfAuthor);
         articleList.add(a);
         errorText.setText("Article Saved!!");
+        articleTableView.getItems().clear();
+        articleTableView.getItems().addAll(articleList);
     }
 
     public void handleSearchrticleButton(ActionEvent actionEvent) {
