@@ -68,12 +68,12 @@ public class ArticleController {
         articleTableView.getItems().addAll(articleList);
     }
 
-    public void handleSearchrticleButton(ActionEvent actionEvent) {
-    }
-
     public void handleYearButtonButton(ActionEvent actionEvent) {
     }
 
     public void handleArticleWithHighestNumberOfAuthorButton(ActionEvent actionEvent) {
+    }
+
+    public void handleSearchArticleButton(ActionEvent actionEvent) {
     }
 }

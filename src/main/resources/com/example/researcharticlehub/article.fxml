@@ -13,7 +13,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="527.0" prefWidth="607.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.researcharticlehub.ArticleController">
    <children>
       <Text layoutX="57.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title: " />
@@ -40,7 +39,7 @@
             <TableColumn fx:id="citationStatusCol" prefWidth="85.0" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="132.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleSearchrticleButton" text="Search Article" />
+      <Button layoutX="132.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleSearchArticleButton" text="Search Article" />
       <Text layoutX="53.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Article Type: " />
       <ComboBox fx:id="searchArticleTypeComboBox" layoutX="157.0" layoutY="201.0" prefWidth="150.0" />
       <Text layoutX="323.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Citation Status: " />
