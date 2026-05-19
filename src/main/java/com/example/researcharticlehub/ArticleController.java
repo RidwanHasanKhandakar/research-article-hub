@@ -80,6 +80,34 @@ public class ArticleController {
     }
 
     public void handleYearButtonButton(ActionEvent actionEvent) {
+        String startInput = yearOneTextField.getText().trim();
+        String endInput = yearSecondTextField.getText().trim();
+        if(startInput.isEmpty()||endInput.isEmpty()){
+            errorText.setText("Plz enter voth years");
+        }
+        int startYear;
+        int endYear;
+        try{
+            startYear=Integer.parseInt(startInput);
+            endYear=Integer.parseInt(endInput);
+        }catch (NumberFormatException e){
+            errorText.setText("Years must contain only numbers");
+            return;
+        }
+        if(startYear>endYear){
+            errorText.setText("Start year cannot be greater than end year");;
+            return;
+        }
+        ArrayList<Article> filteredList = new ArrayList<>();
+        for(Article a: articleList){
+            int publicationYear = a.getPublicationDate().getYear();
+            if(publicationYear>=startYear&&publicationYear<=endYear){
+                filteredList.add(a);
+            }
+        }
+        articleTableView.getItems().clear();
+        articleTableView.getItems().addAll(filteredList);
+        errorText.setText("Filter applied!");
     }
 
     public void handleArticleWithHighestNumberOfAuthorButton(ActionEvent actionEvent) {
