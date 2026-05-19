@@ -49,6 +49,17 @@ public class ArticleController {
     ArrayList<Article> articleList = new ArrayList<>();
     public void handleAddArticleButton(ActionEvent actionEvent) {
 
+        String noOfAuthorsInput = noOfAuthorTextField.getText().trim();
+        if (noOfAuthorTextField.getText().trim().isEmpty()){
+            errorText.setText("Plz enter number of authors");
+            return;
+        }
+        try{
+            Integer.parseInt(noOfAuthorsInput);
+        }catch (NumberFormatException e){
+            errorText.setText("number of authors must take int number");;
+            return;
+        }
         for(Article a:articleList){
             if(a.getTitle().equals(titleTextField.getText())){
                 errorText.setText("Same Title!");
