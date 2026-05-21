@@ -32,7 +32,7 @@ public class ArticleController {
     @javafx.fxml.FXML
     public TableColumn <Article,Integer> noOfAuthorCol;
     @javafx.fxml.FXML
-    public TableColumn <Article,String> citationStatusCol;
+    public TableColumn <Article,Boolean> citationStatusCol;
     @javafx.fxml.FXML
     public ComboBox <String> searchArticleTypeComboBox;
     public ComboBox <String> citationStatusComboBox;
@@ -101,9 +101,9 @@ public class ArticleController {
         int noOfAuthor = Integer.parseInt(noOfAuthorTextField.getText());
         Article a = new Article(title,author,articleType,publicationDAte,citationStatus,noOfAuthor);
         articleList.add(a);
-        errorText.setText("Article Saved!!");
         articleTableView.getItems().clear();
         articleTableView.getItems().addAll(articleList);
+        errorText.setText("Article Saved!!");
     }
 
     @javafx.fxml.FXML
@@ -144,5 +144,23 @@ public class ArticleController {
 
     @javafx.fxml.FXML
     public void handleSearchArticleButton(ActionEvent actionEvent) {
+    String selectedType = searchArticleTypeComboBox.getValue();
+    Boolean selectedCitationStatus = null;
+    if(citationYesCheckBox.isSelected()){
+        selectedCitationStatus=true;
+    } else if (citationNoCheckBox.isSelected()) {
+        selectedCitationStatus=false;
+    }
+    ArrayList<Article> filteredList = new ArrayList<>();
+    for(Article a : articleList){
+        boolean matchedType = a.getArticleType().equals(selectedType);
+        boolean matchedCitation = a.getCitationStatus().equals(selectedCitationStatus);
+        if(matchedType&&matchedCitation){
+            filteredList.add(a);
+        }
+    }
+    articleTableView.getItems().clear();
+    articleTableView.getItems().addAll(filteredList);
+    errorText.setText("Search Complete!");
     }
 }
