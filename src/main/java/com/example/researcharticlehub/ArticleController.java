@@ -97,7 +97,7 @@ public class ArticleController {
         String author = authorTextField.getText();
         String articleType = articleTypeComboBox.getValue();
         LocalDate publicationDAte = publicationDatePicker.getValue();
-        Boolean citationStatus = citationYesCheckBox.isSelected();
+        boolean citationStatus = citationYesCheckBox.isSelected();
         int noOfAuthor = Integer.parseInt(noOfAuthorTextField.getText());
         Article a = new Article(title,author,articleType,publicationDAte,citationStatus,noOfAuthor);
         articleList.add(a);
@@ -141,6 +141,23 @@ public class ArticleController {
 
     @javafx.fxml.FXML
     public void handleArticleWithHighestNumberOfAuthorButton(ActionEvent actionEvent) {
+    if(articleList.isEmpty()){
+        highestNumberOFAuthorTextArea.setText("No Article Found");
+        return;
+    }
+    int maxAuthors = articleList.get(0).getNoOfAuthor();
+    for(Article a: articleList){
+        if(a.getNoOfAuthor()>maxAuthors){
+            maxAuthors = a.getNoOfAuthor();
+        }
+    }
+    String output = " ";
+    for(Article a: articleList){
+        if(a.getNoOfAuthor()==maxAuthors){
+            output+=a.getTitle()+"\n";
+        }
+    }
+    highestNumberOFAuthorTextArea.setText(output);
     }
 
     @javafx.fxml.FXML
