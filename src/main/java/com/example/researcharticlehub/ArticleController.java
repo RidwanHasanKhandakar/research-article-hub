@@ -14,7 +14,7 @@ public class ArticleController {
     public TextField authorTextField;
     @javafx.fxml.FXML
     public ComboBox <String> articleTypeComboBox;
-    public ComboBox <String> searchCitationStatusComboBox;
+    //public ComboBox <String> searchCitationStatusComboBox;
     @javafx.fxml.FXML
     public TextField noOfAuthorTextField;
     @javafx.fxml.FXML
@@ -111,7 +111,8 @@ public class ArticleController {
         String startInput = yearOneTextField.getText().trim();
         String endInput = yearSecondTextField.getText().trim();
         if(startInput.isEmpty()||endInput.isEmpty()){
-            errorText.setText("Plz enter voth years");
+            errorText.setText("Plz enter both years");
+            return;
         }
         int startYear;
         int endYear;
