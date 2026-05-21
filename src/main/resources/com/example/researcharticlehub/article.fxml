@@ -29,40 +29,40 @@
       <Button layoutX="267.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleAddArticleButton" text="Add Article" />
       <Label fx:id="errorText" layoutX="361.0" layoutY="155.0" prefHeight="17.0" prefWidth="235.0" />
       <Line endX="311.29290771484375" layoutX="304.0" layoutY="309.0" startX="-300.0" />
-      <TableView fx:id="articleTableView" layoutX="14.0" layoutY="319.0" prefHeight="198.0" prefWidth="379.0">
+      <TableView fx:id="articleTableView" layoutX="14.0" layoutY="319.0" prefHeight="198.0" prefWidth="587.0">
         <columns>
-          <TableColumn fx:id="titleCol" prefWidth="86.0" text="Title" />
-          <TableColumn fx:id="authorCol" prefWidth="65.0" text="Author" />
-            <TableColumn fx:id="articleTypeCol" prefWidth="88.0" text="Article Type" />
-            <TableColumn fx:id="publicationDateCol" prefWidth="115.0" text="Publication Date" />
-            <TableColumn fx:id="noOfAuthorCol" prefWidth="86.0" text="No of Author" />
-            <TableColumn fx:id="citationStatusCol" prefWidth="85.0" text="Status" />
+          <TableColumn fx:id="titleCol" prefWidth="139.20001220703125" text="Title" />
+          <TableColumn fx:id="authorCol" prefWidth="108.0" text="Author" />
+            <TableColumn fx:id="articleTypeCol" prefWidth="81.60003662109375" text="Article Type" />
+            <TableColumn fx:id="publicationDateCol" prefWidth="100.0" text="Publication Date" />
+            <TableColumn fx:id="noOfAuthorCol" prefWidth="95.199951171875" text="No of Author" />
+            <TableColumn fx:id="citationStatusCol" prefWidth="61.60003662109375" text="Status" />
         </columns>
       </TableView>
       <Button layoutX="132.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleSearchArticleButton" text="Search Article" />
       <Text layoutX="53.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Article Type: " />
-      <ComboBox fx:id="searchArticleTypeComboBox" layoutX="157.0" layoutY="201.0" prefWidth="150.0" />
+      <ComboBox fx:id="searchArticleTypeComboBox" layoutX="135.0" layoutY="201.0" prefWidth="150.0" />
       <Text layoutX="323.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Citation Status: " />
       <Line endX="305.0" layoutX="309.0" layoutY="194.0" startX="-305.0" />
-      <Line endX="1.5" endY="6.5" layoutX="314.0" layoutY="302.0" startX="1.5" startY="-107.5" />
-      <TextField fx:id="yearOneTextField" layoutX="423.0" layoutY="201.0" />
-      <TextField fx:id="yearSecondTextField" layoutX="423.0" layoutY="240.0" />
-      <Button layoutX="406.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleYearButtonButton" text="Year Button" />
-      <Text layoutX="335.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year: " />
-      <Text layoutX="343.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
-      <Text layoutX="335.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year: " />
-      <Line endX="1.5" endY="66.0" layoutX="397.0" layoutY="461.0" startX="1.5" startY="-151.5" />
-      <Button layoutX="407.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleArticleWithHighestNumberOfAuthorButton" prefHeight="44.0" prefWidth="191.0" text="Article with highest number of authors" />
-      <TextArea fx:id="highestNumberOFAuthorTextArea" layoutX="407.0" layoutY="385.0" prefHeight="133.0" prefWidth="191.0" />
+      <Line endX="1.5" endY="6.5" layoutX="296.0" layoutY="302.0" startX="1.5" startY="-107.5" />
+      <TextField fx:id="yearOneTextField" layoutX="342.0" layoutY="200.0" />
+      <TextField fx:id="yearSecondTextField" layoutX="342.0" layoutY="239.0" />
+      <Button layoutX="362.0" layoutY="279.0" mnemonicParsing="false" onAction="#handleYearButtonButton" text="Year Button" />
+      <Text layoutX="307.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year: " />
+      <Text layoutX="315.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
+      <Text layoutX="307.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year: " />
+      <Button layoutX="508.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleArticleWithHighestNumberOfAuthorButton" prefHeight="44.0" prefWidth="93.0" text="Article with highest number of authors" />
+      <TextArea fx:id="highestNumberOFAuthorTextArea" layoutX="507.0" layoutY="258.0" prefHeight="44.0" prefWidth="94.0" />
       <Label layoutX="210.0" layoutY="-1.0" text="Research Article Hub">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <DatePicker fx:id="publicationDatePicker" layoutX="428.0" layoutY="41.0" prefHeight="25.0" prefWidth="150.0" />
-      <CheckBox fx:id="searchYesCheckBox" layoutX="157.0" layoutY="244.0" mnemonicParsing="false" text="Yes" />
-      <CheckBox fx:id="searchNoCheckBox" layoutX="216.0" layoutY="243.0" mnemonicParsing="false" text="No" />
+      <CheckBox fx:id="searchYesCheckBox" layoutX="137.0" layoutY="244.0" mnemonicParsing="false" text="Yes" />
+      <CheckBox fx:id="searchNoCheckBox" layoutX="196.0" layoutY="243.0" mnemonicParsing="false" text="No" />
       <CheckBox fx:id="citationYesCheckBox" layoutX="429.0" layoutY="116.0" mnemonicParsing="false" text="Yes" />
       <CheckBox fx:id="citationNoCheckBox" layoutX="488.0" layoutY="115.0" mnemonicParsing="false" text="No" />
+      <Line endX="1.5" endY="6.5" layoutX="501.0" layoutY="301.0" startX="1.5" startY="-107.5" />
    </children>
 </AnchorPane>
