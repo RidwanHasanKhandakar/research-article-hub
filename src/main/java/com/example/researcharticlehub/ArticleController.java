@@ -146,9 +146,9 @@ public class ArticleController {
     public void handleSearchArticleButton(ActionEvent actionEvent) {
     String selectedType = searchArticleTypeComboBox.getValue();
     Boolean selectedCitationStatus = null;
-    if(citationYesCheckBox.isSelected()){
+    if(searchYesCheckBox.isSelected()){
         selectedCitationStatus=true;
-    } else if (citationNoCheckBox.isSelected()) {
+    } else if (searchNoCheckBox.isSelected()) {
         selectedCitationStatus=false;
     }
     ArrayList<Article> filteredList = new ArrayList<>();
