@@ -155,7 +155,7 @@ public class ArticleController {
     ArrayList<Article> filteredList = new ArrayList<>();
     for(Article a : articleList){
         boolean matchedType = a.getArticleType().equals(selectedType);
-        boolean matchedCitation = a.getCitationStatus().equals(selectedCitationStatus);
+        boolean matchedCitation = selectedType!=null&&a.getArticleType().equals(selectedType);
         if(matchedType&&matchedCitation){
             filteredList.add(a);
         }
