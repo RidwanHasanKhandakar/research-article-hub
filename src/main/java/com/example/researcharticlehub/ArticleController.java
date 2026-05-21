@@ -59,16 +59,17 @@ public class ArticleController {
                 "Review",
                 "Book",
                 "Case");
-        citationStatusComboBox.getItems().addAll("Yes","No");
+        //citationStatusComboBox.getItems().addAll("Yes","No");
         searchArticleTypeComboBox.getItems().addAll("Review",
                 "Book",
                 "Case");
-        searchCitationStatusComboBox.getItems().addAll("Yes","No");
+        //searchCitationStatusComboBox.getItems().addAll("Yes","No");
 
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
         articleTypeCol.setCellValueFactory(new PropertyValueFactory<>("articleType"));
-        publicationDateCol.setCellValueFactory(new PropertyValueFactory<>("citationStatus"));
+        publicationDateCol.setCellValueFactory(new PropertyValueFactory<>("publicationDate"));
+        citationStatusCol.setCellValueFactory(new PropertyValueFactory<>("citationStatus"));
         noOfAuthorCol.setCellValueFactory(new PropertyValueFactory<>("noOfAuthor"));
     }
     ArrayList<Article> articleList = new ArrayList<>();
@@ -96,7 +97,7 @@ public class ArticleController {
         String author = authorTextField.getText();
         String articleType = articleTypeComboBox.getValue();
         LocalDate publicationDAte = publicationDatePicker.getValue();
-        String citationStatus = searchArticleTypeComboBox.getValue();
+        Boolean citationStatus = citationYesCheckBox.isSelected();
         int noOfAuthor = Integer.parseInt(noOfAuthorTextField.getText());
         Article a = new Article(title,author,articleType,publicationDAte,citationStatus,noOfAuthor);
         articleList.add(a);

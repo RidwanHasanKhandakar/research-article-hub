@@ -7,10 +7,10 @@ public class Article {
     private String author;
     private String articleType;
     private LocalDate publicationDate;
-    private String citationStatus;
+    private Boolean citationStatus;
     private Integer noOfAuthor;
 
-    public Article(String title, String author, String articleType, LocalDate publicationDate, String citationStatus, Integer noOfAuthor) {
+    public Article(String title, String author, String articleType, LocalDate publicationDate, Boolean citationStatus, Integer noOfAuthor) {
         this.title = title;
         this.author = author;
         this.articleType = articleType;
@@ -51,11 +51,11 @@ public class Article {
         this.publicationDate = publicationDate;
     }
 
-    public String getCitationStatus() {
+    public Boolean getCitationStatus() {
         return citationStatus;
     }
 
-    public void setCitationStatus(String citationStatus) {
+    public void setCitationStatus(Boolean citationStatus) {
         this.citationStatus = citationStatus;
     }
 
