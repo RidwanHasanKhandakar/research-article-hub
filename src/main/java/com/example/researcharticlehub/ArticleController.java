@@ -8,25 +8,50 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ArticleController {
+    @javafx.fxml.FXML
     public TextField titleTextField;
+    @javafx.fxml.FXML
     public TextField authorTextField;
+    @javafx.fxml.FXML
     public ComboBox <String> articleTypeComboBox;
     public ComboBox <String> searchCitationStatusComboBox;
+    @javafx.fxml.FXML
     public TextField noOfAuthorTextField;
+    @javafx.fxml.FXML
     public Label errorText;
+    @javafx.fxml.FXML
     public TableView <Article> articleTableView;
+    @javafx.fxml.FXML
     public TableColumn <Article,String> titleCol;
+    @javafx.fxml.FXML
     public TableColumn <Article,String> authorCol;
+    @javafx.fxml.FXML
     public TableColumn <Article,String> articleTypeCol;
+    @javafx.fxml.FXML
     public TableColumn <Article, LocalDate> publicationDateCol;
+    @javafx.fxml.FXML
     public TableColumn <Article,Integer> noOfAuthorCol;
+    @javafx.fxml.FXML
     public TableColumn <Article,String> citationStatusCol;
+    @javafx.fxml.FXML
     public ComboBox <String> searchArticleTypeComboBox;
     public ComboBox <String> citationStatusComboBox;
+    @javafx.fxml.FXML
     public TextField yearOneTextField;
+    @javafx.fxml.FXML
     public TextField yearSecondTextField;
+    @javafx.fxml.FXML
     public TextArea highestNumberOFAuthorTextArea;
+    @javafx.fxml.FXML
     public DatePicker publicationDatePicker;
+    @javafx.fxml.FXML
+    private CheckBox searchYesCheckBox;
+    @javafx.fxml.FXML
+    private CheckBox citationYesCheckBox;
+    @javafx.fxml.FXML
+    private CheckBox citationNoCheckBox;
+    @javafx.fxml.FXML
+    private CheckBox searchNoCheckBox;
     //public Button handleSearchrticleButton;
 
     public void initialize(){
@@ -47,6 +72,7 @@ public class ArticleController {
         noOfAuthorCol.setCellValueFactory(new PropertyValueFactory<>("noOfAuthor"));
     }
     ArrayList<Article> articleList = new ArrayList<>();
+    @javafx.fxml.FXML
     public void handleAddArticleButton(ActionEvent actionEvent) {
 
         String noOfAuthorsInput = noOfAuthorTextField.getText().trim();
@@ -79,6 +105,7 @@ public class ArticleController {
         articleTableView.getItems().addAll(articleList);
     }
 
+    @javafx.fxml.FXML
     public void handleYearButtonButton(ActionEvent actionEvent) {
         String startInput = yearOneTextField.getText().trim();
         String endInput = yearSecondTextField.getText().trim();
@@ -110,9 +137,11 @@ public class ArticleController {
         errorText.setText("Filter applied!");
     }
 
+    @javafx.fxml.FXML
     public void handleArticleWithHighestNumberOfAuthorButton(ActionEvent actionEvent) {
     }
 
+    @javafx.fxml.FXML
     public void handleSearchArticleButton(ActionEvent actionEvent) {
     }
 }
