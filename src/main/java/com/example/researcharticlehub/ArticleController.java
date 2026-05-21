@@ -162,23 +162,42 @@ public class ArticleController {
 
     @javafx.fxml.FXML
     public void handleSearchArticleButton(ActionEvent actionEvent) {
-    String selectedType = searchArticleTypeComboBox.getValue();
-    Boolean selectedCitationStatus = null;
-    if(searchYesCheckBox.isSelected()){
-        selectedCitationStatus=true;
-    } else if (searchNoCheckBox.isSelected()) {
-        selectedCitationStatus=false;
-    }
-    ArrayList<Article> filteredList = new ArrayList<>();
-    for(Article a : articleList){
-        boolean matchedType = a.getArticleType().equals(selectedType);
-        boolean matchedCitation = selectedType!=null&&a.getArticleType().equals(selectedType);
-        if(matchedType&&matchedCitation){
-            filteredList.add(a);
+        String selectedType = searchArticleTypeComboBox.getValue();
+
+        ArrayList<Article> filteredList = new ArrayList<>();
+
+        for(Article a : articleList){
+
+            // Match article type
+            boolean matchedType = selectedType != null && a.getArticleType().equals(selectedType);
+
+            // Match citation status
+            boolean matchedCitation = false;
+
+            // YES selected
+            if(searchYesCheckBox.isSelected() && a.getCitationStatus()){
+                matchedCitation = true;
+            }
+
+            // NO selected
+            if(searchNoCheckBox.isSelected() && !a.getCitationStatus()){
+                matchedCitation = true;
+            }
+
+            // BOTH selected
+            if(searchYesCheckBox.isSelected() &&
+                    searchNoCheckBox.isSelected()){
+                matchedCitation = true;
+            }
+
+            if(matchedType && matchedCitation){
+                filteredList.add(a);
+            }
         }
-    }
-    articleTableView.getItems().clear();
-    articleTableView.getItems().addAll(filteredList);
-    errorText.setText("Search Complete!");
+
+        articleTableView.getItems().clear();
+        articleTableView.getItems().addAll(filteredList);
+
+        errorText.setText("Search Complete!");
     }
 }
